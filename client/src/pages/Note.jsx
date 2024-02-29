@@ -16,9 +16,10 @@ export default function Note(){
   // In the JSON file, find the note which has an _id equal to the 
   // id in the URL
   function getNote(){
-    const foundNote = notesDb.find( note => note._id === params.id)
-    console.log(foundNote)
-    setNote(foundNote)
+
+   //  const foundNote = notesDb.find( note => note._id === params.id)
+   //  console.log(foundNote)
+   //  setNote(foundNote)
   }
   
 //   useEffect(() => {

@@ -21,7 +21,7 @@ export default function ListNotes(props){
         </thead>
 
         <tbody>
-          { props.notes.map( (note) => (
+          { props.notes.map( note => (
             <tr key={note.title}>
               <td>
                 <span>
