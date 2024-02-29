@@ -12,16 +12,6 @@ export default function Home() {
 
    const defaultForm = { title: "", body: "", priority: "0" }
 
-//    useEffect(() => {
-//       fetch("api/note")
-//       .then(res => {
-//           const notes = res.json()
-//           console.log("notes is : " + notes[0].title)
-//           setNotes(notes)
-//       })
-//   },[])
-
-
    const [notes, setNotes] = useState([])  // Was notesDb in parentheses
    const [newNote, setNewNote] = useState(defaultForm)
    const [currentNote, setCurrentNote] = useState(null)

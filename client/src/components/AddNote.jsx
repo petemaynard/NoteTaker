@@ -10,6 +10,8 @@ export default function AddNote(props){
   }
 
   async function addNewNote(e){
+   e.preventDefault()
+   
    try {
       const query = await fetch("/api/note", {
          method: "POST",
