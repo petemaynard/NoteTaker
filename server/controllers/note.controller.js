@@ -1,5 +1,6 @@
 const Note = require("../models/Note");
 
+
 async function getAllNotes(){
   try {
     return await Note.find({});
@@ -48,3 +49,11 @@ async function deleteNoteById(id){
     throw new Error(err)
   }
 }
+
+module.exports = {
+   getAllNotes,
+   getNoteById,
+   createNote,
+   updateNoteById,
+   deleteNoteById
+ }

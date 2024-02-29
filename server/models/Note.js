@@ -8,11 +8,11 @@ const userSchema = new mongoose.Schema({
     type: String
   },
   priority: {
-    type: Integer
+    type: Number
   }
 },{
   timestamps: true
 })
 
-const User = mongoose.model('Note', userSchema);
+const Note = mongoose.model('Note', userSchema);
 module.exports = Note;

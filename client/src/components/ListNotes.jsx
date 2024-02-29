@@ -5,7 +5,7 @@ export default function ListNotes(props){
   function getPriority(value){
     if( value === "1" ) return "Low"
     if( value === "2" ) return "Medium"
-    if( value === "3" ) return "LHighow"
+    if( value === "3" ) return "High"
   }
 
 

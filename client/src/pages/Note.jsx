@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import notesDb from "../notes.json"
+// import notesDb from "../notes.json"
 
 export function NoteItem(){
 
@@ -21,9 +21,9 @@ export default function Note(){
     setNote(foundNote)
   }
   
-  useEffect(() => {
-    getNote()
-  },[])
+//   useEffect(() => {
+//     getNote()
+//   },[])
 
   if( !note ) return <>No note could be found.</>
   return (

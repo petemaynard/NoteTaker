@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import AddNote from '../components/AddNote'
 import ListNotes from '../components/ListNotes'
 import Note from '../components/Note'
-import notesDb from "../notes.json"
+// import notesDb from "../notes.json"
+
 
 import "/node_modules/bootstrap/dist/css/bootstrap.min.css"
 
@@ -11,12 +12,15 @@ export default function Home() {
 
   const defaultForm = { title: "", body: "", priority: "0" }
 
-  const [ notes, setNotes ] = useState(notesDb)
+  const [ notes, setNotes ] = useState()  // Was notesDb in parentheses
   const [ newNote, setNewNote ] = useState(defaultForm)
   const [ currentNote, setCurrentNote ] = useState(null)
 
   async function getNotes(){
-    const result = await fetch("https://my.api.mockaroo.com/notes.json?key=302071d0")
+   //  const result = await fetch("https://my.api.mockaroo.com/notes.json?key=302071d0")
+
+
+
     const data = await result.json()
     const newData = data.map( item => ({...item, priority: item.priority.toString() }) )
     setNotes(newData)
