@@ -3,16 +3,34 @@
 
 export default function AddNote(props){
 
+
+
   function handleInputChange(e){
     props.setNewNote({...props.newNote, [e.target.name]: e.target.value })
   }
 
-  function addNewNote(e){
-    e.preventDefault()
-    // add the current note to the notes array
-    props.setNotes([...props.notes, props.newNote])
-    // revert form back to its original state
-    props.setNewNote(props.defaultForm)
+  async function addNewNote(e){
+   try {
+      const query = await fetch("/api/note", {
+         method: "POST",
+         body: JSON.stringify(newNote),  // What goes in parentheses
+         headers: {
+            'Content-Type': 'application/json'
+         }
+      })
+      const result = await query.json()
+      console.log(result)
+      // Send user back to homepage
+      window.location.href = "/"
+   } catch (err) {
+      console.log("Couldn't post note")
+   }
+
+   //  e.preventDefault()
+   //  // add the current note to the notes array
+   //  props.setNotes([...props.notes, props.newNote])
+   //  // revert form back to its original state
+   //  props.setNewNote(props.defaultForm)
   }
 
   return (
